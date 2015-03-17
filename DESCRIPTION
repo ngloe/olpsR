@@ -9,4 +9,4 @@ Description: The OLPS package provides different online portfolio selection algo
 Imports: gtools
 Suggests: quantmod
 LazyData: true
-
+License: None
