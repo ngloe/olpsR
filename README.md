@@ -1,7 +1,9 @@
+OLPS -- On-line Portfolio Selection
+===================================
+
 The OLPS package provides different On-line Portfolio Selection algorithms and functions to deal with the on-line portfolio selection problem where a portfolio is rebalanced in every period to achieve certain goals, e.g. maximizing terminal wealth. For a background on On-line Portfolio Selection see for example [Li and Hoi (2014); <http://arxiv.org/pdf/1212.2129.pdf>]. Datasets to test portfolio selection algorithms are also included.
 
-On-Line Portfolio Selection algorithms:
----------------------------------------
+### On-Line Portfolio Selection algorithms:
 
 -   Buy-and-Hold
 -   Buy-and-Hold best
@@ -11,8 +13,7 @@ On-Line Portfolio Selection algorithms:
 -   Exponential Gradient (Helmbold et al. 1998)
 -   ...
 
-Functions
----------
+### Functions
 
 -   transform asset prices into returns (price relatuives)
 -   transform returns (price relatuives) into asset prices
@@ -20,14 +21,13 @@ Functions
 -   transform a sequence of price relatives into a Kelly market sequence
 -   ...
 
-Datasets
---------
+### Datasets
 
 -   NYSE dataset (used by Cover 1991, Helmbold et al. (1998), ...)
 -   DAX dataset
 
 Installation
-============
+------------
 
 To install the OLPS package run
 
@@ -37,7 +37,7 @@ devtools::install_github("ngloe/OLPS")
 ```
 
 Getting started
-===============
+---------------
 
 Once installed, the package can be loaded in a given R session using:
 
@@ -63,10 +63,10 @@ BCRP
     ## 
     ## Assets                kinar iroqu 
     ## 
-    ## Terminal Wealth       73.70118 
-    ## expected log-Return   0.190199 
-    ## expected Risk         0.4774537 
-    ## Return-to-Risk        0.3983611
+    ## Terminal Wealth       73.70108 
+    ## expected log-Return   0.1901989 
+    ## expected Risk         0.4775556 
+    ## Return-to-Risk        0.398276
 
 Accessing BCRP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
 
@@ -84,7 +84,7 @@ plot(BCRP)
 ![](README_files/figure-markdown_github/unnamed-chunk-7-1.png)
 
 References
-==========
+----------
 
 Cover, Thomas M. 1991. “Universal Portfolios.” *Mathematical Finance* 1 (1). Blackwell Publishing Ltd: 1–29. doi:[10.1111/j.1467-9965.1991.tb00002.x](http://dx.doi.org/10.1111/j.1467-9965.1991.tb00002.x).
 
