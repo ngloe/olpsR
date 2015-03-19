@@ -44,14 +44,18 @@
 #' 
 #########################################################################
 print.OLP <- function(x, ...){
-  pw <- c("BH", "BH_best", "CRP", "BCRP")
+  bh_strat  <- c("BH", "BHbest")
+  crp_strat <- c("CRP", "BCRP")
   
   cat("SUMMARY of", x$Alg, ":\n")
   cat("\n")
   
   cat("Assets               ", x$Names, "\n")
-  if(x$Alg %in% pw){
+  if(x$Alg %in% bh_strat){
     cat("weights              ", x$Weights, "\n")
+  }
+  if(x$Alg %in% crp_strat){
+    cat("weights              ", x$Weights[1,], "\n")
   }
   cat("\n")
   cat("Terminal Wealth      ", x$Wealth[length(x$Wealth)], "\n")
