@@ -116,7 +116,7 @@ calc_BCRP <- function(returns, method="rand", ...){
   } 
 
 
-  # calculate wealth of sample portfolios
+  # calculate terminal wealth of sample portfolios
   portfolios_wealth <- vector(length=nrow(portfolios_weights))
   for( i in 1:nrow(portfolios_weights) ){
     portfolios_wealth[i] <- h_get_wealth_CRP(x, portfolios_weights[i,])[nrow(x)]
