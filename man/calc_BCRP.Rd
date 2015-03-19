@@ -47,12 +47,12 @@ library(OLPS)
 # load data
 data(NYSE)
 # select stocks
-returns <- NYSE[,c("kinar", "iroqu")]
+returns <- cbind(comme=NYSE$comme, kinar=NYSE$kinar)
 
 # calculate BCRP
 calc_BCRP(returns, method="rand", samplings=1000)
 BCRP <- calc_BCRP(returns, method="approx", step=0.05)
-plot(BCRP$Wealth, type="l")
+plot(BCRP)
 plot(BCRP$GrowthRate, type="l")
 }
 \references{
