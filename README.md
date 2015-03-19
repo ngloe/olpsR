@@ -3,8 +3,11 @@ OLPS - On-line Portfolio Selection
 
 The OLPS package provides different On-line Portfolio Selection algorithms and functions to deal with the on-line portfolio selection problem where a portfolio is rebalanced in every period to achieve certain goals, e.g. maximizing terminal wealth. Datasets to test portfolio selection algorithms are also included.
 
+<<<<<<< HEAD
 For a background on On-line Portfolio Selection see for example [Li and Hoi (2014); <http://arxiv.org/pdf/1212.2129.pdf>].
 
+=======
+>>>>>>> a1a8b8a7d3136b39c0a24c27f070bf72eeac4de3
 #### On-Line Portfolio Selection algorithms:
 
 -   Buy-and-Hold
@@ -65,12 +68,21 @@ BCRP
     ## SUMMARY of BCRP :
     ## 
     ## Assets                kinar iroqu 
+<<<<<<< HEAD
     ## weights               0.4604216 0.5395784 
     ## 
     ## Terminal Wealth       73.70116 
     ## expected log-Return   0.190199 
     ## expected Risk         0.4774018 
     ## Return-to-Risk        0.3984044
+=======
+    ## weights               0.4608719 0.5391281 
+    ## 
+    ## Terminal Wealth       73.70113 
+    ## expected log-Return   0.190199 
+    ## expected Risk         0.4775236 
+    ## Return-to-Risk        0.3983028
+>>>>>>> a1a8b8a7d3136b39c0a24c27f070bf72eeac4de3
 
 Accessing BCRP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
 

@@ -12,8 +12,11 @@ bibliography: OLPS.bib
 The OLPS package provides different On-line Portfolio Selection algorithms
 and functions to deal with the on-line portfolio selection problem where a portfolio is rebalanced in every period to achieve certain goals, e.g. maximizing terminal wealth. Datasets to test portfolio selection algorithms are also included.   
 
+<<<<<<< HEAD
 For a background on On-line Portfolio Selection see for example [@LH14; <http://arxiv.org/pdf/1212.2129.pdf>]. 
 
+=======
+>>>>>>> a1a8b8a7d3136b39c0a24c27f070bf72eeac4de3
 #### On-Line Portfolio Selection algorithms:
 * Buy-and-Hold
 * Buy-and-Hold best
