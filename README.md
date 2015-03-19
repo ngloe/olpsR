@@ -65,12 +65,12 @@ BCRP
     ## SUMMARY of BCRP :
     ## 
     ## Assets                kinar iroqu 
-    ## weights               0.4608565 0.5391435 
+    ## weights               0.4606564 0.5393436 
     ## 
-    ## Terminal Wealth       73.70114 
+    ## Terminal Wealth       73.70118 
     ## expected log-Return   0.190199 
-    ## expected Risk         0.4775194 
-    ## Return-to-Risk        0.3983063
+    ## expected Risk         0.4774652 
+    ## Return-to-Risk        0.3983515
 
 Accessing BCRP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
 
@@ -92,7 +92,7 @@ References
 
 Cover, Thomas M. 1991. “Universal Portfolios.” *Mathematical Finance* 1 (1). Blackwell Publishing Ltd: 1–29. doi:[10.1111/j.1467-9965.1991.tb00002.x](http://dx.doi.org/10.1111/j.1467-9965.1991.tb00002.x).
 
-Gaivoronski, AlexeiA., and Fabio Stella. 2000. “Stochastic Nonstationary Optimization for Finding Universal Portfolios.” *Annals of Operations Research* 100 (1-4). Kluwer Academic Publishers: 165–88. doi:[10.1023/A:1019271201970](http://dx.doi.org/10.1023/A:1019271201970).
+Gaivoronski, Alexei A., and Fabio Stella. 2000. “Stochastic Nonstationary Optimization for Finding Universal Portfolios.” *Annals of Operations Research* 100 (1-4). Kluwer Academic Publishers: 165–88. doi:[10.1023/A:1019271201970](http://dx.doi.org/10.1023/A:1019271201970).
 
 Helmbold, David P., Robert E. Schapire, Yoram Singer, and Manfred K. Warmuth. 1998. “On-Line Portfolio Selection Using Multiplicative Updates.” *Mathematical Finance* 8 (4). Blackwell Publishers Inc: 325–47. doi:[10.1111/1467-9965.00058](http://dx.doi.org/10.1111/1467-9965.00058).
 
