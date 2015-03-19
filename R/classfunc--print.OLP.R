@@ -44,7 +44,7 @@
 #' 
 #########################################################################
 print.OLP <- function(x, ...){
-  pw <- c("BAH", "BAH_opt", "CBAL", "CBAL_opt", "SCRP")
+  pw <- c("BH", "BH_best", "CRP", "BCRP")
   
   cat("SUMMARY of", x$Alg, ":\n")
   cat("\n")
