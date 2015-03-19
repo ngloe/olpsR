@@ -13,7 +13,7 @@ For a background on On-line Portfolio Selection see for example [Li and Hoi (201
 -   Best Constant Rebalanced Portfolio
 -   Universal Portfolio (Cover 1991)
 -   Exponential Gradient (Helmbold et al. 1998)
--   Successive Constant Constant Rebalanced Portfolio (Gaivoronski and Stella 2000)
+-   Successive Constant Rebalanced Portfolio (Gaivoronski and Stella 2000)
 -   Volatility Timing (Kirby and Ostdiek 2012)
 
 #### Functions
@@ -65,12 +65,12 @@ BCRP
     ## SUMMARY of BCRP :
     ## 
     ## Assets                kinar iroqu 
-    ## weights               0.4605677 0.5394323 
+    ## weights               0.4608565 0.5391435 
     ## 
-    ## Terminal Wealth       73.70118 
+    ## Terminal Wealth       73.70114 
     ## expected log-Return   0.190199 
-    ## expected Risk         0.4774412 
-    ## Return-to-Risk        0.3983715
+    ## expected Risk         0.4775194 
+    ## Return-to-Risk        0.3983063
 
 Accessing BCRP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
 
