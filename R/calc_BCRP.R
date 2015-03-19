@@ -104,10 +104,10 @@ calc_BCRP <- function(returns, method="rand", ...){
   else if(method=="rand"){
     # check 'samplings' argument
     if(hasArg(samplings)){
-      portfolios_weights <- gen_rand_portfolios(addargs$samplings, n_assets=ncol(returns))
+      portfolios_weights <- gen_rand_portfolios(addargs$samplings, n_assets=ncol(x))
     } 
     else{
-      portfolios_weights <- gen_rand_portfolios(n_portfolios=1000, n_assets=ncol(returns))
+      portfolios_weights <- gen_rand_portfolios(n_portfolios=1000, n_assets=ncol(x))
     }
   } 
   
