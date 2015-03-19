@@ -14,6 +14,7 @@ and functions to deal with the on-line portfolio selection problem where a portf
 
 For a background on On-line Portfolio Selection see for example [@LH14; <http://arxiv.org/pdf/1212.2129.pdf>]. 
 
+
 #### On-Line Portfolio Selection algorithms:
 * Buy-and-Hold
 * Buy-and-Hold best
