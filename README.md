@@ -65,12 +65,12 @@ BCRP
     ## SUMMARY of BCRP :
     ## 
     ## Assets                kinar iroqu 
-    ## weights               0.4604216 0.5395784 
+    ## weights               0.4605677 0.5394323 
     ## 
-    ## Terminal Wealth       73.70116 
+    ## Terminal Wealth       73.70118 
     ## expected log-Return   0.190199 
-    ## expected Risk         0.4774018 
-    ## Return-to-Risk        0.3984044
+    ## expected Risk         0.4774412 
+    ## Return-to-Risk        0.3983715
 
 Accessing BCRP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
 
