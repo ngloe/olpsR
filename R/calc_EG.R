@@ -33,9 +33,9 @@
 #' # load data
 #' data(NYSE)
 #' # select stocks
-#' returns <- NYSE[,c("kinar", "iroqu")]
+#' returns <- cbind(kinar=NYSE$kinar, iroqu=NYSE$iroqu)
 #' 
-#' # calculate Universal Portfolio algorithm
+#' # calculate Exponential Gradient algorithm
 #' EG <- calc_EG(returns, eta=0.05)
 #' plot(EG$Wealth, type="l")
 #' 
