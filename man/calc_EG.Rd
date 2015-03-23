@@ -34,11 +34,15 @@ library(OLPS)
 # load data
 data(NYSE)
 # select stocks
-returns <- NYSE[,c("kinar", "iroqu")]
+returns <- cbind(kinar=NYSE$kinar, iroqu=NYSE$iroqu)
 
-# calculate Universal Portfolio algorithm
+# calculate Exponential Gradient algorithm
 EG <- calc_EG(returns, eta=0.05)
-plot(EG$Wealth, type="l")
+
+# plot portfolio wealth
+plot(EG)
+# plot portfolio weights of kinar
+plot(EG$Weights[,1], type="l")
 }
 \references{
 Helmbold, D. P.; Schapire, R. E.; Singer, Y. & Warmuth, M. K.,
