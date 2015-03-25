@@ -14,6 +14,8 @@ For a background on On-line Portfolio Selection see for example [Li and Hoi (201
 -   Universal Portfolio (Cover 1991)
 -   Exponential Gradient (Helmbold et al. 1998)
 -   Successive Constant Rebalanced Portfolio (Gaivoronski and Stella 2000)
+-   Anticor (Borodin, El-Yaniv, and Gogan 2004)
+-   Passive Aggressive Mean Reversion (Li et al. 2012)
 -   Volatility Timing (Kirby and Ostdiek 2012)
 
 #### Functions
@@ -22,6 +24,7 @@ For a background on On-line Portfolio Selection see for example [Li and Hoi (201
 -   transform returns (price relatuives) into asset prices
 -   calculate portfolio wealth of rebalanced portfolios
 -   transform a sequence of price relatives into a Kelly market sequence
+-   projection onto a simplex
 -   ...
 
 #### Datasets
@@ -32,7 +35,7 @@ For a background on On-line Portfolio Selection see for example [Li and Hoi (201
 Installation
 ------------
 
-To install the OLPS package run
+To install the OLPS package run:
 
 ``` r
 if (!require("devtools")) install.packages("devtools")
@@ -42,7 +45,7 @@ devtools::install_github("ngloe/OLPS")
 Getting started
 ---------------
 
-Once installed, the package can be loaded in a given R session using:
+Once installed, the package can be loaded using:
 
 ``` r
 library(OLPS)
@@ -65,12 +68,12 @@ BCRP
     ## SUMMARY of BCRP :
     ## 
     ## Assets                kinar iroqu 
-    ## weights               0.4606564 0.5393436 
+    ## weights               0.4604575 0.5395425 
     ## 
-    ## Terminal Wealth       73.70118 
+    ## Terminal Wealth       73.70117 
     ## expected log-Return   0.190199 
-    ## expected Risk         0.4774652 
-    ## Return-to-Risk        0.3983515
+    ## expected Risk         0.4774114 
+    ## Return-to-Risk        0.3983964
 
 Accessing BCRP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
 
@@ -79,7 +82,7 @@ BCRPS$Wealth
 BCRPS$Weights
 ```
 
-The achieved portfolio wealth (performance) can be plotted by
+The achieved portfolio wealth (performance) can be plotted by:
 
 ``` r
 plot(BCRP)
@@ -87,8 +90,16 @@ plot(BCRP)
 
 ![](README_files/figure-markdown_github/unnamed-chunk-7-1.png)
 
+For more details and an overview of the implemented algorithms and functions please refer to the package help by typing:
+
+``` r
+help(package="OLPS")
+```
+
 References
 ----------
+
+Borodin, Allan, Ran El-Yaniv, and Vincent Gogan. 2004. “Can We Learn to Beat the Best Stock.” *Journal of Artificial Intelligence Research* 21 (1). USA: AI Access Foundation: 579–94.
 
 Cover, Thomas M. 1991. “Universal Portfolios.” *Mathematical Finance* 1 (1). Blackwell Publishing Ltd: 1–29. doi:[10.1111/j.1467-9965.1991.tb00002.x](http://dx.doi.org/10.1111/j.1467-9965.1991.tb00002.x).
 
@@ -99,3 +110,5 @@ Helmbold, David P., Robert E. Schapire, Yoram Singer, and Manfred K. Warmuth. 19
 Kirby, Chris, and Barbara Ostdiek. 2012. “It’s All in the Timing: Simple Active Portfolio Strategies That Outperform Naïve Diversification.” *Journal of Financial and Quantitative Analysis* 47 (02): 437–67. doi:[10.1017/S0022109012000117](http://dx.doi.org/10.1017/S0022109012000117).
 
 Li, Bin, and Steven C. H. Hoi. 2014. “Online Portfolio Selection: A Survey.” *ACM Comput. Surv.* 46 (3). New York, NY, USA: ACM: 35:1–35:36. doi:[10.1145/2512962](http://dx.doi.org/10.1145/2512962).
+
+Li, Bin, Peilin Zhao, Steven C. H. Hoi, and Vivekanand Gopalkrishnan. 2012. “PAMR: Passive Aggressive Mean Reversion Strategy for Portfolio Selection.” *Machine Learning* 87 (2). Springer US: 221–58. doi:[10.1007/s10994-012-5281-z](http://dx.doi.org/10.1007/s10994-012-5281-z).

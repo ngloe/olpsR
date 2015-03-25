@@ -23,6 +23,8 @@ For a background on On-line Portfolio Selection see for example [@LH14; <http://
 * Universal Portfolio [@Cov91]
 * Exponential Gradient [@HSS98]
 * Successive Constant Rebalanced Portfolio [@GS00]
+* Anticor [@BEG04]
+* Passive Aggressive Mean Reversion [@LZH12]
 * Volatility Timing [@KO12]
 
 #### Functions
@@ -30,6 +32,7 @@ For a background on On-line Portfolio Selection see for example [@LH14; <http://
 * transform returns (price relatuives) into asset prices
 * calculate portfolio wealth of rebalanced portfolios
 * transform a sequence of price relatives into a Kelly market sequence
+* projection onto a simplex
 * ...
 
 #### Datasets
@@ -38,14 +41,14 @@ For a background on On-line Portfolio Selection see for example [@LH14; <http://
 
 
 ## Installation
-To install the OLPS package run
+To install the OLPS package run:
 ```{r eval=FALSE}
 if (!require("devtools")) install.packages("devtools")
 devtools::install_github("ngloe/OLPS")
 ```
 
 ## Getting started
-Once installed, the package can be loaded in a given R session using:
+Once installed, the package can be loaded using:
 ```{r eval=FALSE}
 library(OLPS)
 ```
@@ -71,9 +74,15 @@ Accessing BCRP then returns a short summary of the algorithm's output. To access
 BCRPS$Wealth
 BCRPS$Weights
 ```
-The achieved portfolio wealth (performance) can be plotted by
+The achieved portfolio wealth (performance) can be plotted by:
 ```{r eval=TRUE}
 plot(BCRP)
 ```
+
+For more details and an overview of the implemented algorithms and functions please refer to the package help by typing:
+```{r eval=FALSE}
+help(package="OLPS")
+```
+
 
 ## References
