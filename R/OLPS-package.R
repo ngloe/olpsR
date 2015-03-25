@@ -8,10 +8,6 @@
 #' and functions to deal with the online portfolio selection problem. 
 #' Datasets to test the algorithms are also included.
 #' 
-#' Algorithms are mostly based on the paper "Online Portfolio Selection: A Survey"
-#' by Bin Li and Steven C. Hoi 
-#' (\url{http://arxiv.org/pdf/1212.2129.pdf})
-#' 
 #' @section Algorithms:
 #' The following online portfolio selection algorithms are currently implemented:
 #' \itemize{
@@ -25,6 +21,10 @@
 #'  \item{\code{PAMR}: }{Passive Aggressive Mean Reversion}
 #'  \item{\code{VT}: }{Volatility Timing}
 #' }
+#' For more details on the algorithms please refer to the paper 
+#' "Online Portfolio Selection: A Survey"
+#' by Bin Li and Steven C. Hoi 
+#' (\url{http://arxiv.org/pdf/1212.2129.pdf})
 #' 
 #' @section Functions:
 #' 'Helper' functions, e.g. to transform stock prices into price relatives or 
