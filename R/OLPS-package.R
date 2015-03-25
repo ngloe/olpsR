@@ -15,13 +15,15 @@
 #' @section Algorithms:
 #' The following online portfolio selection algorithms are currently implemented:
 #' \itemize{
-#'  \item{\code{BH}: }{Buy-and-Hold Strategy}
-#'  \item{\code{BHbest}: }{best Buy-and-Hold Strategy}
-#'  \item{\code{CRP}: }{Constant Rebalanced Portfolio Strategy}
-#'  \item{\code{BCRP}: }{Best Constant Rebalanced Portfolio Strategy}
-#'  \item{\code{UP}: }{Universal Portfolio Algorithm}
-#'  \item{\code{EG}: }{Exponential Gradient Algorithm}
-#'  \item{\code{VT}: }{Volatility Timing Algorithm}
+#'  \item{\code{BH}: }{Buy-and-Hold}
+#'  \item{\code{BHbest}: }{best Buy-and-Hold}
+#'  \item{\code{CRP}: }{Constant Rebalanced Portfolio}
+#'  \item{\code{BCRP}: }{Best Constant Rebalanced Portfolio}
+#'  \item{\code{UP}: }{Universal Portfolio}
+#'  \item{\code{EG}: }{Exponential Gradient}
+#'  \item{\code{Anticor}: }{Anticor}
+#'  \item{\code{PAMR}: }{Passive Aggressive Mean Reversion}
+#'  \item{\code{VT}: }{Volatility Timing}
 #' }
 #' 
 #' @section Functions:
