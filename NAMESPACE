@@ -2,6 +2,7 @@
 
 S3method(plot,OLP)
 S3method(print,OLP)
+export(calc_Anticor)
 export(calc_BCRP)
 export(calc_BH)
 export(calc_BHbest)
