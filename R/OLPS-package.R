@@ -17,6 +17,7 @@
 #'  \item{\code{BCRP}: }{Best Constant Rebalanced Portfolio}
 #'  \item{\code{UP}: }{Universal Portfolio}
 #'  \item{\code{EG}: }{Exponential Gradient}
+#'  \item{\code{SCRP}: }{Successive Constant Rebalanced Portfolio}
 #'  \item{\code{Anticor}: }{Anticor}
 #'  \item{\code{PAMR}: }{Passive Aggressive Mean Reversion}
 #'  \item{\code{VT}: }{Volatility Timing}
