@@ -38,6 +38,7 @@ For a background on On-line Portfolio Selection see for example [@LH14; <http://
 #### Datasets
 * NYSE dataset [used by @Cov91, @HSS98, ...]
 * DAX dataset
+* DJIA dataset [used by @BEG04, ...]
 
 
 ## Installation

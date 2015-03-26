@@ -31,6 +31,7 @@ For a background on On-line Portfolio Selection see for example [Li and Hoi (201
 
 -   NYSE dataset (used by Cover 1991, Helmbold et al. (1998), ...)
 -   DAX dataset
+-   DJIA dataset (used by Borodin, El-Yaniv, and Gogan 2004, ...)
 
 Installation
 ------------
@@ -68,12 +69,12 @@ BCRP
     ## SUMMARY of BCRP :
     ## 
     ## Assets                kinar iroqu 
-    ## weights               0.4604575 0.5395425 
+    ## weights               0.461034 0.538966 
     ## 
-    ## Terminal Wealth       73.70117 
-    ## expected log-Return   0.190199 
-    ## expected Risk         0.4774114 
-    ## Return-to-Risk        0.3983964
+    ## Terminal Wealth       73.70105 
+    ## expected log-Return   0.1901989 
+    ## expected Risk         0.4775675 
+    ## Return-to-Risk        0.398266
 
 Accessing BCRP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
 
