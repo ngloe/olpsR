@@ -63,6 +63,7 @@ calc_BH <- function(returns, weights){
   S_assets <- apply(x, 2, cumprod)
   # Wealth
   S <- rowSums(S_assets * b)
+  S <- c(1, S)
   # crreate OLP object
   ret <- h_create_OLP_obj(alg, x, b, S)
   return(ret)
