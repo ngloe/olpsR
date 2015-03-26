@@ -6,19 +6,18 @@
 \title{NYSE daily returns}
 \format{A data frame with 5651 observations on the following 36 stocks.}
 \source{
-According to Helmbold et al, the data set was originally collected by Hal Stern.
-The data here is provided by Yoram Singer \url{http://www.cs.bme.hu/~oti/portfolio/data.html}
+Originally collected by Hal Stern the data here is provided by
+Yoram Singer \url{http://www.cs.bme.hu/~oti/portfolio/data.html}
 }
 \usage{
 data(NYSE)
 }
 \description{
-The dataset contains daily returns of the New York Stock Exchange
-of 36 stocks from 1962-07-03 until 1984-12-31, that is 5651 trading days.
+The dataset contains daily returns of 36 stocks listed in the
+New York Stock Exchange from 1962-07-03 until 1984-12-31, that is 5651 trading days.
 Returns are calculated as closing price divided by the closing price
 of the privious day (price relative).
-The dataset was used, amongst others, by Cover for his analysis of
-'Universal Portfolios'.
+The dataset was used for the analysis of Cover's \code{Universal Portfolio} algorithm for example
 }
 \details{
 The following stocks are included:
@@ -60,6 +59,10 @@ The following stocks are included:
  \item{\code{sherw}}
  \item{\code{tex}}
 }
+}
+\references{
+Cover, T. M.
+Universal Portfolios, 1991
 }
 \keyword{datasets}
 
