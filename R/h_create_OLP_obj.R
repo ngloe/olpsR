@@ -12,14 +12,21 @@
 # ---------------------------------------------------------
 h_create_OLP_obj <- function(alg, returns, weights, wealth){
   gr <- get_growth_rate(wealth)
+  # annualized log-return
+  r  <- gr[length(gr)] * 252
+  # annualized return
+  R  <- exp(r)-1
+  # annualized portfolio risk (volatility risk)
+  x = get_price_relatives(wealth)
+  risk = sd(x) * sqrt(252)
   
   ret <- list(Alg=alg,
               Names=colnames(returns), 
               Weights=weights, 
               Wealth=wealth,
               GrowthRate=gr,
-              Return=gr[length(gr)] * 250,
-              Risk=get_risk(wealth))
+              Return=R,
+              Risk=risk)
   class(ret) <- "OLP"
   return(ret)  
 }

@@ -23,9 +23,8 @@
 #' \item{weights}{portfolio weights; only shown if weights remain constant 
 #'                during trading horizon}
 #' \item{Terminal Wealth}{final cumulative wealth achieved by the algorithm}
-#' \item{expected log-return}{annualized expected log return}
-#' \item{expected risk}{annualized standard deviation of expected log-returns}
-#' \item{Return-to-Risk}{ratio of exp. log-return and exp. risk}
+#' \item{return}{annualized portfolio return (252 trading days)}
+#' \item{risk}{portfolio risk defined as the annualized standard deviation of returns (252 trading days)}
 #' 
 #' @examples
 #' library(OLPS)
@@ -43,24 +42,41 @@
 #' @export
 #' 
 #########################################################################
-print.OLP <- function(x, ...){
-  bh_strat  <- c("BH", "BHbest")
-  crp_strat <- c("CRP", "BCRP")
+print.OLP = function(x, ...){
   
+  # Heading with algorithm's name
   cat("SUMMARY of", x$Alg, ":\n")
-  cat("\n")
+  cat("----------\n")
   
-  cat("Assets               ", x$Names, "\n")
+  # print asset names (max. 5)
+  len = length(x$Names)
+  if( len <= 5){ 
+    cat("  Assets               ", x$Names, "\n")
+  } else {
+    cat("  Assets               ", x$Names[1:5], "... \n")
+  }
+  
+  # print portfolio weights (max. 5) if ALG=(BH, BHbest, CRP, BCRP)
+  bh_strat  = c("BH", "BHbest")
+  crp_strat = c("CRP", "BCRP")
   if(x$Alg %in% bh_strat){
-    cat("weights              ", x$Weights, "\n")
+    if( len <= 5 ){
+      cat("  weights              ", round(x$Weights, 3), "\n")
+    } else {
+      cat("  weights              ", round(x$Weights[1:5], 3), "... \n")
+    }
   }
   if(x$Alg %in% crp_strat){
-    cat("weights              ", x$Weights[1,], "\n")
+    if( len <= 5 ){
+      cat("  weights              ", round(x$Weights[1,], 3), "\n")
+    } else {
+      cat("  weights              ", round(x$Weights[1,1:5], 3), "... \n")
+    }
   }
   cat("\n")
-  cat("Terminal Wealth      ", x$Wealth[length(x$Wealth)], "\n")
-  cat("expected log-Return  ", x$Return, "\n")
-  cat("expected Risk        ", x$Risk, "\n")
-  cat("Return-to-Risk       ", x$Return/x$Risk, "\n")
-  cat("\n")
+  
+  cat("  Terminal Wealth      ", round( x$Wealth[length(x$Wealth)], 3), "\n")
+  cat("  Return [%]           ", round( x$Return * 100, 3 ), "\n")
+  cat("  Risk   [%]           ", round( x$Risk * 100, 3), "\n")
+  cat("----------\n")
 }

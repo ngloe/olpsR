@@ -17,9 +17,8 @@ The function returns a short summary of the OLP object containing
 \item{weights}{portfolio weights; only shown if weights remain constant
                during trading horizon}
 \item{Terminal Wealth}{final cumulative wealth achieved by the algorithm}
-\item{expected log-return}{annualized expected log return}
-\item{expected risk}{annualized standard deviation of expected log-returns}
-\item{Return-to-Risk}{ratio of exp. log-return and exp. risk}
+\item{return}{annualized portfolio return (252 trading days)}
+\item{risk}{portfolio risk defined as the annualized standard deviation of returns (252 trading days)}
 }
 \description{
 print method for objects of the class "\code{OLP}"
