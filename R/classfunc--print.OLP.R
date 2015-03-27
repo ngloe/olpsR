@@ -25,6 +25,8 @@
 #' \item{Terminal Wealth}{final cumulative wealth achieved by the algorithm}
 #' \item{return}{annualized portfolio return (252 trading days)}
 #' \item{risk}{portfolio risk defined as the annualized standard deviation of returns (252 trading days)}
+#' \item{APY}{annualized percantage yield (252 trading days)}
+#' \item{MDD}{maximum draw down (downside risk)}
 #' 
 #' @examples
 #' library(OLPS)
@@ -51,9 +53,9 @@ print.OLP = function(x, ...){
   # print asset names (max. 5)
   len = length(x$Names)
   if( len <= 5){ 
-    cat("  Assets               ", x$Names, "\n")
+    cat("  Assets     ", x$Names, "\n")
   } else {
-    cat("  Assets               ", x$Names[1:5], "... \n")
+    cat("  Assets     ", x$Names[1:5], "... \n")
   }
   
   # print portfolio weights (max. 5) if ALG=(BH, BHbest, CRP, BCRP)
@@ -61,22 +63,25 @@ print.OLP = function(x, ...){
   crp_strat = c("CRP", "BCRP")
   if(x$Alg %in% bh_strat){
     if( len <= 5 ){
-      cat("  weights              ", round(x$Weights, 3), "\n")
+      cat("  weights    ", round(x$Weights, 3), "\n")
     } else {
-      cat("  weights              ", round(x$Weights[1:5], 3), "... \n")
+      cat("  weights    ", round(x$Weights[1:5], 3), "... \n")
     }
   }
   if(x$Alg %in% crp_strat){
     if( len <= 5 ){
-      cat("  weights              ", round(x$Weights[1,], 3), "\n")
+      cat("  weights    ", round(x$Weights[1,], 3), "\n")
     } else {
-      cat("  weights              ", round(x$Weights[1,1:5], 3), "... \n")
+      cat("  weights    ", round(x$Weights[1,1:5], 3), "... \n")
     }
   }
   cat("\n")
   
-  cat("  Terminal Wealth      ", round( x$Wealth[length(x$Wealth)], 3), "\n")
-  cat("  Return [%]           ", round( x$Return * 100, 3 ), "\n")
-  cat("  Risk   [%]           ", round( x$Risk * 100, 3), "\n")
+  cat("  Terminal Wealth  ", round( x$Wealth[length(x$Wealth)], 3), "\n")
+  cat("\n")
+  cat("  Return [%]  ", round( x$Return * 100, 3 ), "\t\t\t")
+  cat("  APY [%]  ", round( x$APY * 100, 3 ), "\n")
+  cat("  Risk   [%]  ", round( x$Risk * 100, 3), "\t\t\t")
+  cat("  MDD [%]  ", round( x$MDD * 100, 3 ), "\n")
   cat("----------\n")
 }

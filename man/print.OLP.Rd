@@ -19,6 +19,8 @@ The function returns a short summary of the OLP object containing
 \item{Terminal Wealth}{final cumulative wealth achieved by the algorithm}
 \item{return}{annualized portfolio return (252 trading days)}
 \item{risk}{portfolio risk defined as the annualized standard deviation of returns (252 trading days)}
+\item{APY}{annualize percantage yield (252 trading days)}
+\item{MDD}{maximum draw down (downside risk)}
 }
 \description{
 print method for objects of the class "\code{OLP}"
