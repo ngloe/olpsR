@@ -15,16 +15,19 @@ calc_CRP(returns, weights)
 }
 \value{
 Object of class OLP containing
-        \item{Alg}{Name of the Algorithm,}
-        \item{Names}{vector of asset names in the portfolio,}
-        \item{Weights}{calculated portfolio weights as a vector,}
-        \item{Wealth}{wealth achieved by the portfolio as a vector,}
-        \item{GrowthRate}{growth rate achieved by the portfolio as a vector,}
-        \item{Return}{expected annual log-return,}
-        \item{Risk}{standard deviation of log returns (annualized).}
+        \item{Alg}{Name of the Algorithm}
+        \item{Names}{vector of asset names in the portfolio}
+        \item{Weights}{calculated portfolio weights as a vector}
+        \item{Wealth}{wealth achieved by the portfolio as a vector}
+        \item{GrowthRate}{exponential growth rate achieved by the portfolio as a vector}
+        \item{Return}{annualized portfolio return (252 trading days)}
+        \item{Risk}{portfolio risk defined as the annualized standard deviation of returns (252 trading days)}
+        \item{APY}{annualized percantage yield (252 trading days)}
+        \item{MDD}{maximum draw down (downside risk)}
+        see also \code{\link{print.OLP}}, \code{\link{plot.OLP}}
 }
 \description{
-calculates the constant rebalanced portfolio algorithm (CRP)
+computes the constant rebalanced portfolio algorithm (CRP)
 }
 \note{
 The print method for \code{OLP} objects prints only a short summary.

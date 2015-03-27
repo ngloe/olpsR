@@ -15,13 +15,16 @@ calc_Anticor(returns, w)
 }
 \value{
 Object of class OLP containing
-        \item{Alg}{Name of the Algorithm,}
-        \item{Names}{vector of asset names in the portfolio,}
-        \item{Weights}{calculated portfolio weights as a vector,}
-        \item{Wealth}{wealth achieved by the portfolio as a vector,}
-        \item{GrowthRate}{growth rate achieved by the portfolio as a vector,}
-        \item{Return}{expected annual log-return,}
-        \item{Risk}{standard deviation of log returns (annualized).}
+        \item{Alg}{Name of the Algorithm}
+        \item{Names}{vector of asset names in the portfolio}
+        \item{Weights}{calculated portfolio weights as a vector}
+        \item{Wealth}{wealth achieved by the portfolio as a vector}
+        \item{GrowthRate}{exponential growth rate achieved by the portfolio as a vector}
+        \item{Return}{annualized portfolio return (252 trading days)}
+        \item{Risk}{portfolio risk defined as the annualized standard deviation of returns (252 trading days)}
+        \item{APY}{annualized percantage yield (252 trading days)}
+        \item{MDD}{maximum draw down (downside risk)}
+        see also \code{\link{print.OLP}}, \code{\link{plot.OLP}}
 }
 \description{
 computes the Anticor algorithm by Borodin et al. 2004
@@ -44,10 +47,10 @@ library(OLPS)
 # load data
 data(NYSE)
 # select stocks
-x <- cbind(kinar=NYSE$kinar, iroqu=NYSE$iroqu)
+x <- cbind(iroqu=NYSE$iroqu, kinar=NYSE$kinar)
 
-# calculate Universal Portfolio algorithm
-Anticor <- calc_Anticor(x, w = 30)
+# calculate Anticor algorithm
+Anticor <- calc_Anticor(x, 30)
 plot(Anticor)
 }
 \references{

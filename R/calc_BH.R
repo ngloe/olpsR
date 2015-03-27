@@ -20,7 +20,7 @@
 #
 #' Buy-and-Hold (BH)
 #' 
-#' calculates Buy-and-Hold portfolio for given weigths.
+#' computes Buy-and-Hold portfolio for given weigths.
 #' 
 #' @param returns Matrix of price relatives, i.e., the ratio of the closing
 #'                (opening) price today and the day before (use function 
@@ -28,13 +28,16 @@
 #' @param weights vector of portfolio weights for the Buy-and-Hold portfolio
 #' 
 #' @return Object of class OLP containing
-#'         \item{Alg}{Name of the Algorithm,}
-#'         \item{Names}{vector of asset names in the portfolio,}
-#'         \item{Weights}{calculated portfolio weights as a vector,}
-#'         \item{Wealth}{wealth achieved by the portfolio as a vector,}
-#'         \item{GrowthRate}{growth rate achieved by the portfolio as a vector,}
-#'         \item{Return}{expected annual log-return,}
-#'         \item{Risk}{standard deviation of log returns (annualized).}
+#'         \item{Alg}{Name of the Algorithm}
+#'         \item{Names}{vector of asset names in the portfolio}
+#'         \item{Weights}{calculated portfolio weights as a vector}
+#'         \item{Wealth}{wealth achieved by the portfolio as a vector}
+#'         \item{GrowthRate}{exponential growth rate achieved by the portfolio as a vector}
+#'         \item{Return}{annualized portfolio return (252 trading days)}
+#'         \item{Risk}{portfolio risk defined as the annualized standard deviation of returns (252 trading days)}
+#'         \item{APY}{annualized percantage yield (252 trading days)}
+#'         \item{MDD}{maximum draw down (downside risk)}
+#'         see also \code{\link{print.OLP}}, \code{\link{plot.OLP}}
 #'  
 #' @note The print method for \code{OLP} objects prints only a short summary.
 #'       
