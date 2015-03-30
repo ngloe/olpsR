@@ -62,9 +62,13 @@
 #########################################################################
 calc_CRP <- function(returns, weights){
   alg <- "CRP"
+  # if naive diversification: ALG-name = UCRP
+  if( weights[1] == 1/ncol(returns) ){
+    alg <- "UCRP"
+  }
   x   <- as.matrix(returns)
   b   <- weights
-  b <- matrix( rep(b, nrow(x)), nrow=nrow(x), ncol=ncol(x), byrow=TRUE)
+  b   <- matrix( rep(b, nrow(x)), nrow=nrow(x), ncol=ncol(x), byrow=TRUE)
   # Wealth
   S   <- get_wealth(x, b)
   # create OLP object
