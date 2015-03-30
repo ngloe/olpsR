@@ -14,10 +14,12 @@ h_create_OLP_obj <- function(alg, returns, weights, wealth){
   gr <- get_growth_rate(wealth)
   
   # Calculate Performance Measures
-  # average log-return
-  r  <- gr[length(gr)]
-  # annualized return
-  R  <- (exp(r)-1) * 252
+  # log-return
+  r  <- diff( log(wealth) )
+  # discrete return
+  R  <- exp(r)-1
+  # average annualized return
+  R_mean <- mean(R) * 252
   # annualized portfolio risk (volatility risk)
   x = get_price_relatives(wealth)
   risk = sd(x) * sqrt(252)
@@ -38,7 +40,7 @@ h_create_OLP_obj <- function(alg, returns, weights, wealth){
               Weights=weights, 
               Wealth=wealth,
               GrowthRate=gr,
-              Return=R,
+              Return=R_mean,
               Risk=risk,
               APY=APY,
               MDD=MDD)
