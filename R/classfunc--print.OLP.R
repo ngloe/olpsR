@@ -47,8 +47,11 @@
 print.OLP = function(x, ...){
   
   # Heading with algorithm's name
-  cat("SUMMARY of", x$Alg, ":\n")
-  cat("----------\n")
+  cat("SUMMARY:\n")
+  cat("--------\n")
+  
+  # print algorithm
+  cat("  Algorithm  ", x$Alg, "\n")
   
   # print asset names (max. 5)
   len = length(x$Names)
@@ -83,5 +86,5 @@ print.OLP = function(x, ...){
   cat("  APY [%]  ", round( x$APY * 100, 3 ), "\n")
   cat("  Risk   [%]  ", round( x$Risk * 100, 3), "\t\t\t")
   cat("  MDD [%]  ", round( x$MDD * 100, 3 ), "\n")
-  cat("----------\n")
+  cat("--------\n")
 }
