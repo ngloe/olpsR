@@ -5,6 +5,9 @@ The OLPS package provides different On-line Portfolio Selection algorithms and f
 
 For a background on On-line Portfolio Selection see for example [Li and Hoi (2014); <http://arxiv.org/pdf/1212.2129.pdf>].
 
+Features
+--------
+
 #### On-Line Portfolio Selection algorithms:
 
 -   Buy-and-Hold
@@ -18,7 +21,7 @@ For a background on On-line Portfolio Selection see for example [Li and Hoi (201
 -   Passive Aggressive Mean Reversion (Li et al. 2012)
 -   Volatility Timing (Kirby and Ostdiek 2012)
 
-#### Functions
+#### Functions:
 
 -   transform asset prices into returns (price relatuives)
 -   transform returns (price relatuives) into asset prices
@@ -27,7 +30,7 @@ For a background on On-line Portfolio Selection see for example [Li and Hoi (201
 -   projection onto a simplex
 -   ...
 
-#### Datasets
+#### Datasets:
 
 -   NYSE dataset (used by Cover 1991, Helmbold et al. (1998), ...)
 -   DAX dataset
@@ -56,40 +59,51 @@ To test portfolio selection algorithms some return data is loaded using the NYSE
 
 ``` r
 data(NYSE)
-x <- cbind(kinar=NYSE$kinar, iroqu=NYSE$iroqu)
+x = cbind(kinar=NYSE$kinar, iroqu=NYSE$iroqu)
 ```
 
-Algorithms can be run by applying *calc\_ALG* on the selected data where *ALG* is the desired algorithm. For example, to calculate the Best Constant Rebalanced Portfolio (BCRP) type:
+Algorithms can be computed by applying *alg\_ALG* on the selected data where *ALG* is the desired algorithm. For example, to approximate the *Universal Portfolio* algorithm (UP) type:
 
 ``` r
-BCRP <- calc_BCRP(x)
-BCRP
+UP = alg_UP(x); UP
 ```
 
-    ## SUMMARY of BCRP :
+    ## SUMMARY:
+    ## --------
+    ##   Algorithm   UP 
+    ##   Assets      kinar iroqu 
     ## 
-    ## Assets                kinar iroqu 
-    ## weights               0.461034 0.538966 
+    ##   Terminal Wealth   40.616 
     ## 
-    ## Terminal Wealth       73.70105 
-    ## expected log-Return   0.1901989 
-    ## expected Risk         0.4775675 
-    ## Return-to-Risk        0.398266
+    ##   Return [%]   28.711              APY [%]   17.957 
+    ##   Risk   [%]   49.616              MDD [%]   82.788 
+    ## --------
 
-Accessing BCRP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
+Accessing UP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
 
 ``` r
-BCRPS$Wealth
-BCRPS$Weights
+UP$Wealth
+UP$Weights
 ```
 
 The achieved portfolio wealth (performance) can be plotted by:
 
 ``` r
-plot(BCRP)
+plot(UP)
 ```
 
-![](README_files/figure-markdown_github/unnamed-chunk-7-1.png)
+To easily compare different algorithms pass them to the plot function:
+
+``` r
+BH_Market = alg_BH( x, weights=c(0.5, 0.5) )
+BH_best   = alg_BHbest(x)
+plot(BH_Market, BH_best, UP)
+```
+
+![](README_files/figure-markdown_github/unnamed-chunk-8-1.png)
+
+Getting Help
+------------
 
 For more details and an overview of the implemented algorithms and functions please refer to the package help by typing:
 

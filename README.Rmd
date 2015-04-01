@@ -14,7 +14,7 @@ and functions to deal with the on-line portfolio selection problem where a portf
 
 For a background on On-line Portfolio Selection see for example [@LH14; <http://arxiv.org/pdf/1212.2129.pdf>]. 
 
-
+## Features
 #### On-Line Portfolio Selection algorithms:
 * Buy-and-Hold
 * Buy-and-Hold best
@@ -27,7 +27,7 @@ For a background on On-line Portfolio Selection see for example [@LH14; <http://
 * Passive Aggressive Mean Reversion [@LZH12]
 * Volatility Timing [@KO12]
 
-#### Functions
+#### Functions:
 * transform asset prices into returns (price relatuives)
 * transform returns (price relatuives) into asset prices
 * calculate portfolio wealth of rebalanced portfolios
@@ -35,7 +35,7 @@ For a background on On-line Portfolio Selection see for example [@LH14; <http://
 * projection onto a simplex
 * ...
 
-#### Datasets
+#### Datasets:
 * NYSE dataset [used by @Cov91, @HSS98, ...]
 * DAX dataset
 * DJIA dataset [used by @BEG04, ...]
@@ -55,31 +55,36 @@ library(OLPS)
 ```
 
 To test portfolio selection algorithms some return data is loaded using the NYSE dataset. We select two assets, *kinar* and *iroqu*:
-```{r eval=FALSE}
-data(NYSE)
-x <- cbind(kinar=NYSE$kinar, iroqu=NYSE$iroqu)
-```
-
-Algorithms can be run by applying *calc_ALG* on the selected data where *ALG* is the desired algorithm. For example, to calculate the Best Constant Rebalanced Portfolio (BCRP) type:
 ```{r eval=TRUE, echo=FALSE}
 library(OLPS)
+```
+```{r eval=TRUE, echo=TRUE}
 data(NYSE)
-x <- cbind(kinar=NYSE$kinar, iroqu=NYSE$iroqu)
-```
-```{r eval=TRUE}
-BCRP <- calc_BCRP(x)
-BCRP
-```
-Accessing BCRP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
-```{r eval=FALSE}
-BCRPS$Wealth
-BCRPS$Weights
-```
-The achieved portfolio wealth (performance) can be plotted by:
-```{r eval=TRUE}
-plot(BCRP)
+x = cbind(kinar=NYSE$kinar, iroqu=NYSE$iroqu)
 ```
 
+Algorithms can be computed by applying *alg_ALG* on the selected data where *ALG* is the desired algorithm. For example, to approximate the *Universal Portfolio* algorithm (UP) type:
+```{r eval=TRUE}
+UP = alg_UP(x); UP
+```
+Accessing UP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
+```{r eval=FALSE}
+UP$Wealth
+UP$Weights
+```
+The achieved portfolio wealth (performance) can be plotted by:
+```{r eval=FALSE}
+plot(UP)
+```
+To easily compare different algorithms pass them to the plot function:
+```{r eval=TRUE}
+BH_Market = alg_BH( x, weights=c(0.5, 0.5) )
+BH_best   = alg_BHbest(x)
+plot(BH_Market, BH_best, UP)
+```
+
+
+## Getting Help
 For more details and an overview of the implemented algorithms and functions please refer to the package help by typing:
 ```{r eval=FALSE}
 help(package="OLPS")
