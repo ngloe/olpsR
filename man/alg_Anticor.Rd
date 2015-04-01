@@ -11,7 +11,7 @@ alg_Anticor(returns, w)
 (opening) price today and the day before (use function
 \code{get_price_relatives} to calculate from asset prices).}
 
-\item{w}{window size (\code{\eqn{w \ge 2}})}
+\item{w}{window size (\eqn{w \ge 2})}
 }
 \value{
 Object of class OLP containing

@@ -9,7 +9,7 @@
 #' @param returns Matrix of price relatives, i.e. the ratio of the closing
 #'                (opening) price today and the day before (use function 
 #'                \code{get_price_relatives} to calculate from asset prices).
-#' @param w window size (\code{\eqn{w \ge 2}})
+#' @param w window size (\eqn{w \ge 2})
 #' 
 #' @return Object of class OLP containing
 #'         \item{Alg}{Name of the Algorithm}
