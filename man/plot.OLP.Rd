@@ -12,7 +12,9 @@
 \item{...}{additional arguments}
 }
 \value{
-plots the achieved wealth of an online portfolio selection algorithm
+Plots the achieved wealth of an online portfolio selection algorithm.
+If multiple input arguments of class OLP are given a risk-return plot
+and APY and MDD values are also given.
 }
 \description{
 plot method for objects of the class "\code{OLP}"
@@ -22,11 +24,15 @@ library(OLPS)
 #load data
 data(NYSE)
 # select stocks
-returns <- NYSE[,c("kinar", "iroqu")]
-weights <- c(0.5, 0.5)
+data(NYSE)
+x = cbind(iroqu=NYSE$iroqu, kinar=NYSE$kinar, comme=NYSE$comme)
 
-#calc_CRP
-CRP <- calc_CRP(returns, weights)
-plot(CRP)
+# compute portfolio algorithms
+MARKET = calc_BH(x, rep(1/ncol(x), ncol(x)))
+BHbest = calc_BHbest(x)
+ND     = calc_CRP(x, rep(1/ncol(x), ncol(x)))
+
+plot(MARKET)
+plot(MARKET, BHbest, ND)
 }
 
