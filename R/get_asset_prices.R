@@ -10,7 +10,6 @@ t#### roxygen2 comments ################################################
 #' @return Vector or matrix of prices
 #'  
 #' @examples 
-#' library(OLPS)
 #' # load return data (price relatives)
 #' data(NYSE)
 #' # get asset prices

@@ -1,18 +1,3 @@
-# --- Function Wealth -------------------------------------
-# 
-# Usage:    get_wealth(Returns, weights, cr)
-# Purpose:  Calculates the Wealth of given portfolio weights
-# Input:    returns --> Matrix; relative Returns, that is the Ratio of the 
-#                       Return today and the day before
-#           weights --> Vector or Matrix
-#           cr      --> commission rate charged for each transaction
-#                       (both buying and selling)
-# Output:   Vector of CRP Wealth
-#
-# Transaction costs model: Borodin, A. & El-Yaniv, R., Online computation and competitive analysis. Cambridge University Press, 1998, Chapter 14.5.4, pp. 296-302
-# ---------------------------------------------------------
-
-
 #### roxygen2 comments ################################################
 #
 #' Get portfolio wealth
@@ -28,16 +13,14 @@
 #' @return vector of the portfolio's cumulative wealth
 #' 
 #' @examples 
-#' library(OLPS)
 #' # load data
 #' data(NYSE)
 #' # select stocks
-#' x <- NYSE[,c("kinar", "iroqu")]
+#' x = cbind(comme=NYSE$comme, kinar=NYSE$kinar)
 #' # specify portfolio weights
-#' b <- c(0.05, 0.05)
+#' b = c(0.05, 0.05)
 #' # calculate wealth
-#' get_wealth(x, b)
-#' get_wealth(x, b)
+#' W = get_wealth(x, b); W
 #'  
 #' @export
 #' 

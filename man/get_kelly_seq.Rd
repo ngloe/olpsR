@@ -21,11 +21,10 @@ otherwise 0. If there exist 2 or more assets with
 maximum value assign 1 randomly amongst them.
 }
 \examples{
-library(OLPS)
 #load data
 data(NYSE)
 # select stocks
-x <- NYSE[,c("kinar", "iroqu")]
+x = cbind(comme=NYSE$comme, kinar=NYSE$kinar)
 get_kelly_seq(x)
 }
 

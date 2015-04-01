@@ -20,7 +20,6 @@ and APY and MDD values are also given.
 plot method for objects of the class "\code{OLP}"
 }
 \examples{
-library(OLPS)
 #load data
 data(NYSE)
 # select stocks
@@ -28,9 +27,9 @@ data(NYSE)
 x = cbind(iroqu=NYSE$iroqu, kinar=NYSE$kinar, comme=NYSE$comme)
 
 # compute portfolio algorithms
-MARKET = calc_BH(x, rep(1/ncol(x), ncol(x)))
-BHbest = calc_BHbest(x)
-ND     = calc_CRP(x, rep(1/ncol(x), ncol(x)))
+MARKET = alg_BH(x, rep(1/ncol(x), ncol(x)))
+BHbest = alg_BHbest(x)
+ND     = alg_CRP(x, rep(1/ncol(x), ncol(x)))
 
 plot(MARKET)
 plot(MARKET, BHbest, ND)

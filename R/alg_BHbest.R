@@ -1,21 +1,3 @@
-# --- FUNCTION calc_BHbest --------------------------------
-#
-# Usage:    calc_BHbest(returns)
-# Purpose:  calculates the best asset portfolio
-# Input:    returns --> Matrix; relative returns (the ratio of 
-#                       the closing (opening) price today and 
-#                       the day before)
-# Output:   object of class OLP, containing 
-#           - algorithm name
-#           - weights
-#           - wealth
-#           - growth rate
-#           - expected annual log-return (return)
-#           - standard deviation of exp. ann. log-return (risk)
-#
-#----------------------------------------------------------
-
-
 #### roxygen2 comments ################################################
 #
 #' Buy-and-Hold best asset (BHbest)
@@ -41,22 +23,20 @@
 #' @note The print method for \code{OLP} objects prints only a short summary.
 #'       
 #' @examples 
-#' library(OLPS)
 #' # load data
 #' data(NYSE)
 #' # select stocks
-#' returns <- NYSE[,c("kinar", "iroqu")]
+#' returns = cbind(comme=NYSE$comme, kinar=NYSE$kinar)
 #' 
 #' # calculate best Buy-and-Hold portfolio
-#' BHbest <- calc_BHbest(returns)
+#' BHbest = alg_BHbest(returns)
 #' BHbest
 #' BHbest$Wealth
-#' BHbest$GrowthRate
 #' 
 #' @export
 #' 
 #########################################################################
-calc_BHbest <- function(returns){
+alg_BHbest <- function(returns){
   alg <-"BHbest"
   x   <- as.matrix(returns)
   b   <- rep(0, ncol(x))

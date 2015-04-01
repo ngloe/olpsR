@@ -1,17 +1,3 @@
-# --- FUNCTION Rnd.Port ---------------------------------------
-#
-# Usage:    Rnd_Port(n_portfolios, n_assets)
-# Purpose:  creates random portfolios as uniform samplings;
-#           see:   Ishijima 2001, Numerical Methods for 
-#                  Universal Portfolios (unpublished), 
-#                  Algorithm 3
-# Input:    no.portfolios --> number of portfolios to be created
-#           no.assets     --> number of assets within the portfolio; integer
-# Output:   Matrix with portfolio weights; each row represents a portfolio
-#
-# -------------------------------------------------------------
-
-
 #### roxygen2 comments ################################################
 #
 #' Generate random portfolios
@@ -29,7 +15,6 @@
 #' \url{http://www.business.uts.edu.au/qfrc/conferences/qmf2001/Ishijima_H.pdf}
 #'       
 #' @examples 
-#' library("OLPS")
 #' gen_rand_portfolios(10, 3)
 #' 
 #' @export

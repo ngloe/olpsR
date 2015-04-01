@@ -20,7 +20,6 @@ computes the projection of a vector onto the simplex
 The algorithm is based on a mini-paper by Chen and Ye (see refereneces)
 }
 \examples{
-library("OLPS")
 y = runif(100, -10, 10)
 projsplx(y)
 }

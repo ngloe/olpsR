@@ -1,23 +1,3 @@
-# --- FUNCTION calc_CRP ------------------------------------#
-#
-# Usage:    calc_CRP(returns, weights)
-# Purpose:  calculates the constant rebalanced portfolio (CRP) 
-#           for given weights
-# Input:    returns --> Matrix; relative returns (the ratio of 
-#                       the closing (opening) price today and 
-#                       the day before)
-#           weights --> vector containing portfolio weights
-# Output:   object of class OLP, containing 
-#           - algorithm name
-#           - weights
-#           - wealth
-#           - growth rate
-#           - expected annual log-return (return)
-#           - standard deviation of exp. ann. log-return (risk)
-#
-#----------------------------------------------------------#
-
-
 #### roxygen2 comments ################################################
 #
 #' Constant Rebalanced Portfolio Algorithm (CRP)
@@ -44,23 +24,21 @@
 #' @note The print method for \code{OLP} objects prints only a short summary.
 #' 
 #' @examples 
-#' library(OLPS)
 #' # load data
 #' data(NYSE)
 #' # select stocks
-#' returns <- NYSE[,c("kinar", "iroqu")]
-#' weights <- c(0.5, 0.5)
+#' returns = cbind(comme=NYSE$comme, kinar=NYSE$kinar)
+#' weights = c(0.5, 0.5)
 #'  
-#' # calculate Constant Rebalanced Portfolio
-#' CRP <- calc_CRP(returns, weights)
-#' CRP
-#' plot(CRP$Wealth, type="l")
-#' plot(CRP$GrowthRate, type="l")
+#' # compute Constant Rebalanced Portfolio
+#' CRP = alg_CRP(returns, weights); CRP
+#' plot(CRP)
+#' plot(CRP$Weights[,1], type="l")
 #' 
 #' @export
 #' 
 #########################################################################
-calc_CRP <- function(returns, weights){
+alg_CRP <- function(returns, weights){
   alg <- "CRP"
   # if naive diversification: ALG-name = UCRP
   if( weights[1] == 1/ncol(returns) ){

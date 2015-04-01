@@ -38,24 +38,22 @@
 #' \url{http://mpra.ub.uni-muenchen.de/21913/}
 #' 
 #' @examples 
-#' library(OLPS)
 #' # load data
 #' data(NYSE)
 #' # select stocks
-#' returns <- cbind(comme=NYSE$comme, kinar=NYSE$kinar)
+#' returns = cbind(comme=NYSE$comme, kinar=NYSE$kinar)
 #' 
 #' # calculate BCRP
-#' calc_SCRP(returns, method="rand", samplings=1000)
-#' SCRP <- calc_SCRP(returns, method="approx", step=0.05)
-#' plot(SCRP)
-#' plot(SCRP$Weights, type="l")
-#' plot(SCRP$GrowthRate, type="l")
+#' SCRP_rnd = alg_SCRP(returns, method="rand", samplings=1000); SCRP_rnd
+#' SCRP_approx = alg_SCRP(returns, method="approx", step=0.05); SCRP_approx
+#' plot(SCRP_rnd, SCRP_approx)
+#' plot(SCRP_approx$Weights, type="l")
 #' 
 #' @export
 #' 
 #########################################################################
 
-calc_SCRP <- function(returns, method="rand", ...){
+alg_SCRP <- function(returns, method="rand", ...){
   alg <- "SCRP"
   x   <- as.matrix(returns)
   

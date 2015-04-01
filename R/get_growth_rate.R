@@ -1,13 +1,3 @@
-# --- Function get_growth_rate -------------------------
-#
-# Usage:    get_growth_rate(wealth)
-# Purpose:  Calculates the exponential growth rate (i.e. expected log-return)
-# Input:    Wealth --> Vector of Wealth
-# Output:   exponential growth rate
-#
-# --------------------------------------------------
-
-
 #### roxygen2 comments ################################################
 #
 #' Get exponential growth rate
@@ -20,15 +10,14 @@
 #' @return vector of the portfolio's exponential growth rate
 #'  
 #' @examples 
-#' library(OLPS)
 #' # load data
 #' data(NYSE)
 #' # select stocks
-#' x <- NYSE[,c("kinar", "iroqu")]
+#' x = cbind(comme=NYSE$comme, kinar=NYSE$kinar)
 #' # specify portfolio weights
-#' b <- c(0.05, 0.05)
+#' b = c(0.05, 0.05)
 #' # calculate wealth
-#' w <- get_wealth(x, b)
+#' w = get_wealth(x, b)
 #' # calculate exponential growth rate
 #' get_growth_rate(w)
 #' 

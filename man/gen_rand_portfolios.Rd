@@ -19,7 +19,6 @@ generates uniformly distributed random portfolios based on Algorithm 3
 of Ishijima's 'Numerical Methods for Universal Portfolios' (see references)
 }
 \examples{
-library("OLPS")
 gen_rand_portfolios(10, 3)
 }
 \references{

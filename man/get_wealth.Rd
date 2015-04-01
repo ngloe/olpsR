@@ -21,15 +21,13 @@ calculates the achieved cumulative wealth of a steadily rebalanced
 portfolio
 }
 \examples{
-library(OLPS)
 # load data
 data(NYSE)
 # select stocks
-x <- NYSE[,c("kinar", "iroqu")]
+x = cbind(comme=NYSE$comme, kinar=NYSE$kinar)
 # specify portfolio weights
-b <- c(0.05, 0.05)
+b = c(0.05, 0.05)
 # calculate wealth
-get_wealth(x, b)
-get_wealth(x, b)
+W = get_wealth(x, b); W
 }
 

@@ -23,7 +23,6 @@
 #' \url{http://arxiv.org/abs/1101.6081v2}
 #'       
 #' @examples 
-#' library("OLPS")
 #' y = runif(100, -10, 10)
 #' projsplx(y)
 #' 

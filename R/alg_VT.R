@@ -1,19 +1,3 @@
-# --- FUNCTION calc_VT ----------------------------------
-#
-# Usage:    calc_VT(prices)
-# Purpose:  calculates the Volatility Timing Portfolio (see: Kirby & Ostdiek 2013)
-# Input:    prices  --> asset prices
-# Output:   object of class OLP, containing 
-#           - algorithm name
-#           - weights
-#           - wealth
-#           - growth rate
-#           - expected annual log-return (return)
-#           - standard deviation of exp. ann. log-return (risk)
-#
-#----------------------------------------------------------
-
-
 #### roxygen2 comments ################################################
 #
 #' Volatility Timing Algorithm (VT)
@@ -42,21 +26,18 @@
 #' and Quantitative Analysis, 2012, 47, 437-467
 #' 
 #' @examples 
-#' library(OLPS)
 #' # load data
 #' data(NYSE)
-#' x <- NYSE[,c("kinar", "iroqu")]
-#' q <- get_asset_prices(x)
-#' # calculate Volatility Timing algorithm
-#' VT <- calc_VT(q)
-#' VT
-#' plot(VT$Wealth, type="l")
-#' plot(VT$GrowthRate, type="l")
+#' x = cbind(comme=NYSE$comme, kinar=NYSE$kinar)
+#' q = get_asset_prices(x)
+#' # compute Volatility Timing algorithm
+#' VT = alg_VT(q); VT
+#' plot(VT)
 #' 
 #' @export
 #' 
 #########################################################################
-calc_VT <- function(prices){
+alg_VT <- function(prices){
   alg <- "VT"
   # Prices
   p_x <- prices

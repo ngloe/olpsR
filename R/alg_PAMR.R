@@ -1,5 +1,3 @@
-# ---- Passive Aggressive Mean Reversion Algorithmm (Li et al. 2012) ---- #
-
 #### roxygen2 comments ####################################################
 #
 #' Passive Aggressive Mean Reversion Algorithm (PAMR)
@@ -47,20 +45,19 @@
 #' \url{http://arxiv.org/abs/1101.6081v2}
 #' 
 #' @examples 
-#' library(OLPS)
 #' # load data
 #' data(NYSE)
 #' # select stocks
-#' x <- cbind(kinar=NYSE$kinar, iroqu=NYSE$iroqu)
+#' x = cbind(kinar=NYSE$kinar, iroqu=NYSE$iroqu)
 #' 
 #' # calculate Universal Portfolio algorithm
-#' PAMR <- calc_PAMR(x, epsilon=0.5)
+#' PAMR = alg_PAMR(x, epsilon=0.5)
 #' plot(PAMR)
 #' 
 #' @export
 #' 
 #########################################################################
-calc_PAMR = function(returns, epsilon=0.5){
+alg_PAMR = function(returns, epsilon=0.5){
   alg   <- "PAMR"
   x     <- as.matrix(returns)
   b     <- matrix(nrow=nrow(x), ncol=ncol(x))

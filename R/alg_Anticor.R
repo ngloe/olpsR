@@ -41,20 +41,19 @@
 #' \url{http://arxiv.org/abs/1107.0036}
 #'  
 #' @examples 
-#' library(OLPS)
 #' # load data
 #' data(NYSE)
 #' # select stocks
-#' x <- cbind(iroqu=NYSE$iroqu, kinar=NYSE$kinar)
+#' x = cbind(iroqu=NYSE$iroqu, kinar=NYSE$kinar)
 #' 
-#' # calculate Anticor algorithm
-#' Anticor <- calc_Anticor(x, 30)
+#' # compute Anticor algorithm
+#' Anticor = alg_Anticor(x, 30)
 #' plot(Anticor)
 #' 
 #' @export
 #' 
 #########################################################################
-calc_Anticor = function(returns, w){
+alg_Anticor = function(returns, w){
   # Input
   alg = "Anticor"
   x   = as.matrix(returns)

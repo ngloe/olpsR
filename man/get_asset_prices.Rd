@@ -17,7 +17,6 @@ calculates the asset prices of according price relatives; that is the
 cumulative product of the price relatives
 }
 \examples{
-library(OLPS)
 # load return data (price relatives)
 data(NYSE)
 # get asset prices

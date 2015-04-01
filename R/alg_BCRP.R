@@ -1,33 +1,3 @@
-# --- FUNCTION calc_BCRP ----------------------------------
-#
-# Usage:    calc_BCRP(returns, method, ...)
-# Purpose:  calculates the 'best' constant rebalanced Portfolio;
-# Input:    returns --> Matrix; returns as price relatives (the ratio of 
-#                       the closing (opening) price today and 
-#                       the day before)
-#           method  --> Method used to calculate BCRP; posiible values:
-#                       - "approx"  --> limits the set of CRPs, e.g. in the two asset
-#                                       case to the portfolios of the form 
-#                                       b = (b_1, 1-b_1), where b_1 runs from 
-#                                       0 to 1 in steps of length "step=0.05"
-#                       - "rand"    --> Calculation is approximative using random portfolios 
-#                                       (see: Ishijima 2001, Numerical methods for Universal
-#                                       Portfolios (unpublished)). 
-#                                       By default the number of random portfolios is 
-#                                       "samplings=1000". 
-#         ...       --> further arguments (samplings, step) dependend on the 
-#                       "method" argument.
-# Output:   object of class OLP, containing 
-#           - algorithm name
-#           - weights
-#           - wealth
-#           - growth rate
-#           - expected annual log-return (return)
-#           - standard deviation of exp. ann. log-return (risk)
-#
-#----------------------------------------------------------
-
-
 #### roxygen2 comments ################################################
 #
 #' Best Constant Rebalanced Portfolio Algorithm (BCRP)
@@ -69,22 +39,20 @@
 #' \url{http://www.business.uts.edu.au/qfrc/conferences/qmf2001/Ishijima_H.pdf}
 #' 
 #' @examples 
-#' library(OLPS)
 #' # load data
 #' data(NYSE)
 #' # select stocks
-#' returns <- cbind(comme=NYSE$comme, kinar=NYSE$kinar)
+#' returns = cbind(comme=NYSE$comme, kinar=NYSE$kinar)
 #' 
-#' # calculate BCRP
-#' calc_BCRP(returns, method="rand", samplings=1000)
-#' BCRP <- calc_BCRP(returns, method="approx", step=0.05)
-#' plot(BCRP)
-#' plot(BCRP$GrowthRate, type="l")
+#' # compute BCRP
+#' BCRP_rnd = alg_BCRP(returns, method="rand", samplings=1000); BCRP_rnd
+#' BCRP_approx = alg_BCRP(returns, method="approx", step=0.05); BCRP_approx
+#' plot(BCRP_rnd, BCRP_approx)
 #' 
 #' @export
 #' 
 #########################################################################
-calc_BCRP <- function(returns, method="rand", ...){
+alg_BCRP <- function(returns, method="rand", ...){
   alg <- "BCRP"
   x   <- as.matrix(returns)
   

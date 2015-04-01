@@ -29,15 +29,14 @@
 #' \item{MDD}{maximum draw down (downside risk)}
 #' 
 #' @examples
-#' library(OLPS)
 #' #load data
 #' data(NYSE)
 #' # select stocks
-#' returns <- NYSE[,c("kinar", "iroqu")]
-#' weights <- c(0.5, 0.5)
+#' returns = cbind(comme=NYSE$comme, kinar=NYSE$kinar)
+#' weights = c(0.5, 0.5)
 #'  
 #' #calc_CRP
-#' CRP <- calc_CRP(returns, weights)
+#' CRP = alg_CRP(returns, weights)
 #' print(CRP)
 #' 
 #' @S3method print OLP
