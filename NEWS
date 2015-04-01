@@ -1,3 +1,13 @@
+OLPS v0.3
+=========
+
+Changes:
+
+* names of algorithms are now alg_ALGORITHM instead of calc_ALGORITHM
+* print.OLP (returns a summary of the algorithm)
+* plot.OLP can handle multiple algorithms at once (returns a comparison)
+
+
 OLPS v0.2
 =========
 

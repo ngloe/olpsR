@@ -1,12 +1,11 @@
 Package: OLPS
-Title: Functions for On-line Portfolio Selection
-Version: 0.2
-Authors@R: person("Nicolas", "Gloeckner", email = "ngl@gmx.net", 
-  role = c("aut", "cre"))
-Description: The OLPS package provides different online portfolio selection algorithms
-  and functions to deal with the online portfolio selection problem. 
-  Datasets to test the algorithms are also included.
-Imports: gtools
+Version: 0.3
+Title: Algorithms and functions for On-line Portfolio Selection
+Authors@R: person("Nicolas", "Gloeckner", email = "ngl@gmx.net", role = c("aut", "cre", "cph"))
+Author: Nicolas Gloeckner
+Maintainer: Nicolas Gloeckner <ngl@gmx.net>
 Suggests: quantmod
+Imports: gtools
 LazyData: true
-License: None
+Description: The OLPS package provides different on-line portfolio selection algorithms and functions to deal with the on-line portfolio selection problem. Datasets to test the algorithms are also included.
+License: MIT + file LICENSE
