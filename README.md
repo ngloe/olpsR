@@ -19,6 +19,7 @@ Features
 -   Successive Constant Rebalanced Portfolio (Gaivoronski and Stella 2000)
 -   Anticor (Borodin, El-Yaniv, and Gogan 2004)
 -   Passive Aggressive Mean Reversion (Li et al. 2012)
+-   Confidence Weighted Mean Reversion (Li et al. 2013)
 -   Volatility Timing (Kirby and Ostdiek 2012)
 
 #### Functions:
@@ -73,10 +74,10 @@ UP = alg_UP(x); UP
     ##   Algorithm   UP 
     ##   Assets      kinar iroqu 
     ## 
-    ##   Terminal Wealth   40.616 
+    ##   Terminal Wealth   39.211 
     ## 
-    ##   Return [%]   28.711              APY [%]   17.957 
-    ##   Risk   [%]   49.616              MDD [%]   82.788 
+    ##   Return [%]   28.877              APY [%]   17.772 
+    ##   Risk   [%]   50.28               MDD [%]   83.268 
     ## --------
 
 Accessing UP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
@@ -125,5 +126,7 @@ Helmbold, David P., Robert E. Schapire, Yoram Singer, and Manfred K. Warmuth. 19
 Kirby, Chris, and Barbara Ostdiek. 2012. “It’s All in the Timing: Simple Active Portfolio Strategies That Outperform Naïve Diversification.” *Journal of Financial and Quantitative Analysis* 47 (02): 437–67. doi:[10.1017/S0022109012000117](http://dx.doi.org/10.1017/S0022109012000117).
 
 Li, Bin, and Steven C. H. Hoi. 2014. “Online Portfolio Selection: A Survey.” *ACM Comput. Surv.* 46 (3). New York, NY, USA: ACM: 35:1–35:36. doi:[10.1145/2512962](http://dx.doi.org/10.1145/2512962).
+
+Li, Bin, Steven C. H. Hoi, Peilin Zhao, and Vivekanand Gopalkrishnan. 2013. “Confidence Weighted Mean Reversion Strategy for Online Portfolio Selection.” *ACM Trans. Knowl. Discov. Data* 7 (1). New York, NY, USA: ACM: 4:1–4:38. doi:[10.1145/2435209.2435213](http://dx.doi.org/10.1145/2435209.2435213).
 
 Li, Bin, Peilin Zhao, Steven C. H. Hoi, and Vivekanand Gopalkrishnan. 2012. “PAMR: Passive Aggressive Mean Reversion Strategy for Portfolio Selection.” *Machine Learning* 87 (2). Springer US: 221–58. doi:[10.1007/s10994-012-5281-z](http://dx.doi.org/10.1007/s10994-012-5281-z).

@@ -25,6 +25,7 @@ For a background on On-line Portfolio Selection see for example [@LH14; <http://
 * Successive Constant Rebalanced Portfolio [@GS00]
 * Anticor [@BEG04]
 * Passive Aggressive Mean Reversion [@LZH12]
+* Confidence Weighted Mean Reversion [@LHZ13]
 * Volatility Timing [@KO12]
 
 #### Functions:
