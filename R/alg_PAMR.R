@@ -50,7 +50,7 @@
 #' # select stocks
 #' x = cbind(kinar=NYSE$kinar, iroqu=NYSE$iroqu)
 #' 
-#' # calculate Universal Portfolio algorithm
+#' # compute PAMR algorithm
 #' PAMR = alg_PAMR(x, epsilon=0.5)
 #' plot(PAMR)
 #' 
