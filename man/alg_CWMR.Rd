@@ -38,7 +38,8 @@ Li et al. provide different versions of their CWMR algorithm. The
 implemented version is \code{deterministic CWMR-Var}. Also CWMR requires a
 normalization step to ensure that the portfolio weights satisfy the
 assumptions of on-line portfolio selection (no negative weights). It is
-implemented as a siomplex projection according to Chen and Ye 2011.
+implemented as a simplex projection according to Duchi et al. 2008
+(see also \code{\link{projsplx}}).
 }
 \note{
 The print method for \code{OLP} objects prints only a short summary.
@@ -58,9 +59,8 @@ Li, B.; Hoi, S. C. H.; Zhao, P. & Gopalkrishnan, V.
 Confidence Weighted Mean Reversion Strategy for Online Portfolio Selection,
 ACM, 2013
 
-Chen, Y. & Ye, X.
-Projection Onto A Simplex,
-ArXiv e-prints, 2011
-\url{http://arxiv.org/abs/1101.6081v2}
+Duchi, J.; Shalev-Shwartz, S.; Singer, Y. & Chandra, T.
+Efficient projections onto the l 1-ball for learning in high dimensions,
+Proceedings of the 25th international conference on Machine learning, 2008
 }
 

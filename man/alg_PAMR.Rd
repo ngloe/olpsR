@@ -39,7 +39,7 @@ a new portfolio that can force the loss to be zero.
 As the algorithm can lead to negative portfolio weights which are not
 permitted by the definition of on-line portfolio selection a simplex
 projection step is needed. The simplex projection is implemented according
-to Chen and Ye 2011.
+to Duchi et al. 2008 (see also \code{\link{projsplx}}).
 }
 \note{
 The print method for \code{OLP} objects prints only a short summary.
@@ -59,9 +59,8 @@ Li, B.; Zhao, P.; Hoi, S. C. H. & Gopalkrishnan, V.
 PAMR: Passive aggressive mean reversion strategy for portfolio selection,
 Machine Learning, 2012
 
-Chen, Y. & Ye, X.
-Projection Onto A Simplex,
-ArXiv e-prints, 2011
-\url{http://arxiv.org/abs/1101.6081v2}
+Duchi, J.; Shalev-Shwartz, S.; Singer, Y. & Chandra, T.
+Efficient projections onto the l 1-ball for learning in high dimensions,
+Proceedings of the 25th international conference on Machine learning, 2008
 }
 

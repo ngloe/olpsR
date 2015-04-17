@@ -32,17 +32,16 @@
 #' As the algorithm can lead to negative portfolio weights which are not 
 #' permitted by the definition of on-line portfolio selection a simplex 
 #' projection step is needed. The simplex projection is implemented according 
-#' to Chen and Ye 2011.
+#' to Duchi et al. 2008 (see also \code{\link{projsplx}}).
 #' 
 #' @references 
 #' Li, B.; Zhao, P.; Hoi, S. C. H. & Gopalkrishnan, V. 
 #' PAMR: Passive aggressive mean reversion strategy for portfolio selection,
 #' Machine Learning, 2012
 #' 
-#' Chen, Y. & Ye, X. 
-#' Projection Onto A Simplex, 
-#' ArXiv e-prints, 2011
-#' \url{http://arxiv.org/abs/1101.6081v2}
+#' Duchi, J.; Shalev-Shwartz, S.; Singer, Y. & Chandra, T. 
+#' Efficient projections onto the l 1-ball for learning in high dimensions, 
+#' Proceedings of the 25th international conference on Machine learning, 2008
 #' 
 #' @examples 
 #' # load data
@@ -87,15 +86,3 @@ alg_PAMR = function(returns, epsilon=0.5){
   ret <- h_create_OLP_obj(alg, x, b, W)
   return(ret)  
 }
-
-
-# library(OLPS)
-# data(NYSE)
-# source("R/h_create_OLP_obj.R")
-# x <- cbind(comme=NYSE$comme, kinar=NYSE$kinar)
-# x <- as.matrix(NYSE)
-# calc_PAMR(x)
-# 
-# PAMR$Wealth   # Ziel: 5.14E+15 (nur NYSE!)
-
-
