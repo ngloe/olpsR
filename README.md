@@ -33,9 +33,7 @@ Features
 
 #### Datasets:
 
--   NYSE dataset (used by Cover 1991, Helmbold et al. (1998), ...)
--   DAX dataset
--   DJIA dataset (used by Borodin, El-Yaniv, and Gogan 2004, ...)
+NYSE, DJIA, SP500, TSE, DAX
 
 Installation
 ------------
@@ -74,10 +72,10 @@ UP = alg_UP(x); UP
     ##   Algorithm   UP 
     ##   Assets      kinar iroqu 
     ## 
-    ##   Terminal Wealth   39.211 
+    ##   Terminal Wealth   40.603 
     ## 
-    ##   Return [%]   28.877              APY [%]   17.772 
-    ##   Risk   [%]   50.28               MDD [%]   83.268 
+    ##   Return [%]   28.827              APY [%]   17.956 
+    ##   Risk   [%]   49.858              MDD [%]   82.877 
     ## --------
 
 Accessing UP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
