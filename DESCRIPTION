@@ -1,5 +1,5 @@
 Package: OLPS
-Version: 0.3
+Version: 0.4
 Title: Algorithms and functions for On-line Portfolio Selection
 Authors@R: person("Nicolas", "Gloeckner", email = "ngl@gmx.net", role = c("aut", "cre", "cph"))
 Author: Nicolas Gloeckner
