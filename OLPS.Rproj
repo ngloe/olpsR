@@ -15,6 +15,8 @@ LaTeX: pdfLaTeX
 AutoAppendNewline: Yes
 
 BuildType: Package
-PackageUseDevtools: Yes
 PackageInstallArgs: --no-multiarch --with-keep.source
+PackageBuildArgs: --resave-data=best
+PackageBuildBinaryArgs: --resave-data=best
+PackageCheckArgs: --resave-data=best
 PackageRoxygenize: rd,collate,namespace
