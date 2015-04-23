@@ -72,10 +72,10 @@ UP = alg_UP(x); UP
     ##   Algorithm   UP 
     ##   Assets      kinar iroqu 
     ## 
-    ##   Terminal Wealth   40.54 
+    ##   Terminal Wealth   40.514 
     ## 
-    ##   Return [%]   28.934              APY [%]   17.948 
-    ##   Risk   [%]   50.092              MDD [%]   82.986 
+    ##   Return [%]   28.769              APY [%]   17.944 
+    ##   Risk   [%]   49.758              MDD [%]   82.857 
     ## --------
 
 Accessing UP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:

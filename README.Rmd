@@ -1,5 +1,5 @@
 ---
-title: "OLPS"
+title: "olpsR"
 author: "ngloe"
 date: "17.03.2015"
 output: 
