@@ -1,4 +1,4 @@
-Package: OLPS
+Package: olpsR
 Version: 0.4
 Title: Algorithms and functions for On-line Portfolio Selection
 Authors@R: person("Nicolas", "Gloeckner", email = "ngl@gmx.net", role = c("aut", "cre", "cph"))
@@ -7,5 +7,5 @@ Maintainer: Nicolas Gloeckner <ngl@gmx.net>
 Suggests: quantmod
 Imports: gtools
 LazyData: true
-Description: The OLPS package provides different on-line portfolio selection algorithms and functions to deal with the on-line portfolio selection problem. Datasets to test the algorithms are also included.
+Description: The olpsR package provides different on-line portfolio selection algorithms and functions to deal with the on-line portfolio selection problem. Datasets to test the algorithms are also included.
 License: MIT + file LICENSE
