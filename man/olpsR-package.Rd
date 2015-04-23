@@ -3,7 +3,7 @@
 \docType{package}
 \name{olpsR-package}
 \alias{olpsR-package}
-\title{olpsR: Functions for Online Portfolio Selection.}
+\title{olpsR: Algorithms and functions for On-line Portfolio Selection}
 \description{
 The olpsR package provides different online portfolio selection algorithms
 and functions to deal with the online portfolio selection problem.
@@ -22,6 +22,7 @@ The following online portfolio selection algorithms are currently implemented:
  \item{\code{SCRP}: }{Successive Constant Rebalanced Portfolio}
  \item{\code{Anticor}: }{Anticor}
  \item{\code{PAMR}: }{Passive Aggressive Mean Reversion}
+ \item{\code{CWMR}: }{Confidence Weighted Mean Reversion}
  \item{\code{VT}: }{Volatility Timing}
 }
 For more details on the algorithms please refer to the paper

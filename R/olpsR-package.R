@@ -2,7 +2,7 @@
 # Package Documentation with Roxygen2 #
 # ====================================#
 
-#' olpsR: Functions for Online Portfolio Selection.
+#' olpsR: Algorithms and functions for On-line Portfolio Selection
 #'
 #' The olpsR package provides different online portfolio selection algorithms
 #' and functions to deal with the online portfolio selection problem. 
@@ -20,6 +20,7 @@
 #'  \item{\code{SCRP}: }{Successive Constant Rebalanced Portfolio}
 #'  \item{\code{Anticor}: }{Anticor}
 #'  \item{\code{PAMR}: }{Passive Aggressive Mean Reversion}
+#'  \item{\code{CWMR}: }{Confidence Weighted Mean Reversion}
 #'  \item{\code{VT}: }{Volatility Timing}
 #' }
 #' For more details on the algorithms please refer to the paper 
