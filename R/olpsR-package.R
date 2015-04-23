@@ -2,9 +2,9 @@
 # Package Documentation with Roxygen2 #
 # ====================================#
 
-#' OLPS: Functions for Online Portfolio Selection.
+#' olpsR: Functions for Online Portfolio Selection.
 #'
-#' The OLPS package provides different online portfolio selection algorithms
+#' The olpsR package provides different online portfolio selection algorithms
 #' and functions to deal with the online portfolio selection problem. 
 #' Datasets to test the algorithms are also included.
 #' 
@@ -35,5 +35,5 @@
 #' Historical stock prices for different markets.
 #'
 #' @docType package
-#' @name OLPS-package
+#' @name olpsR-package
 NULL
