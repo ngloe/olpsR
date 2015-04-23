@@ -1,7 +1,7 @@
-OLPS - On-line Portfolio Selection
-==================================
+olpsR - On-line Portfolio Selection with R
+==========================================
 
-The OLPS package provides different On-line Portfolio Selection algorithms and functions to deal with the on-line portfolio selection problem where a portfolio is rebalanced in every period to achieve certain goals, e.g. maximizing terminal wealth. Datasets to test portfolio selection algorithms are also included.
+The olpsR package provides different On-line Portfolio Selection algorithms and functions to deal with the on-line portfolio selection problem where a portfolio is rebalanced in every period to achieve certain goals, e.g. maximizing terminal wealth. Datasets to test portfolio selection algorithms are also included.
 
 For a background on On-line Portfolio Selection see for example [Li and Hoi (2014); <http://arxiv.org/pdf/1212.2129.pdf>].
 
@@ -38,11 +38,11 @@ NYSE, DJIA, SP500, TSE, DAX
 Installation
 ------------
 
-To install the OLPS package run:
+To install the olpsR package run:
 
 ``` r
 if (!require("devtools")) install.packages("devtools")
-devtools::install_github("ngloe/OLPS")
+devtools::install_github("ngloe/olpsR")
 ```
 
 Getting started
@@ -51,7 +51,7 @@ Getting started
 Once installed, the package can be loaded using:
 
 ``` r
-library(OLPS)
+library(olpsR)
 ```
 
 To test portfolio selection algorithms some return data is loaded using the NYSE dataset. We select two assets, *kinar* and *iroqu*:
@@ -72,10 +72,10 @@ UP = alg_UP(x); UP
     ##   Algorithm   UP 
     ##   Assets      kinar iroqu 
     ## 
-    ##   Terminal Wealth   40.603 
+    ##   Terminal Wealth   40.54 
     ## 
-    ##   Return [%]   28.827              APY [%]   17.956 
-    ##   Risk   [%]   49.858              MDD [%]   82.877 
+    ##   Return [%]   28.934              APY [%]   17.948 
+    ##   Risk   [%]   50.092              MDD [%]   82.986 
     ## --------
 
 Accessing UP then returns a short summary of the algorithm's output. To access the calculated portfolio wealth or the portfolio weights you can type:
@@ -107,13 +107,13 @@ Getting Help
 For more details and an overview of the implemented algorithms and functions please refer to the package help by typing:
 
 ``` r
-help(package="OLPS")
+help(package="olpsR")
 ```
 
 References
 ----------
 
-Borodin, Allan, Ran El-Yaniv, and Vincent Gogan. 2004. “Can We Learn to Beat the Best Stock.” *Journal of Artificial Intelligence Research* 21 (1). USA: AI Access Foundation: 579–94.
+Borodin, Allan, Ran El-Yaniv, and Vincent Gogan. 2004. “Can We Learn to Beat the Best Stock.” *Journal of Artificial Intelligence Research* 21 (1). USA: AI Access Foundation: 579–94. <http://www.jair.org/papers/paper1336.html>.
 
 Cover, Thomas M. 1991. “Universal Portfolios.” *Mathematical Finance* 1 (1). Blackwell Publishing Ltd: 1–29. doi:[10.1111/j.1467-9965.1991.tb00002.x](http://dx.doi.org/10.1111/j.1467-9965.1991.tb00002.x).
 

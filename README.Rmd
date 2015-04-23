@@ -5,11 +5,11 @@ date: "17.03.2015"
 output: 
   md_document:
     variant: markdown_github
-bibliography: OLPS.bib
+bibliography: olpsR.bib
 ---
 
-# OLPS  -  On-line Portfolio Selection
-The OLPS package provides different On-line Portfolio Selection algorithms
+# olpsR  -  On-line Portfolio Selection with R
+The olpsR package provides different On-line Portfolio Selection algorithms
 and functions to deal with the on-line portfolio selection problem where a portfolio is rebalanced in every period to achieve certain goals, e.g. maximizing terminal wealth. Datasets to test portfolio selection algorithms are also included.   
 
 For a background on On-line Portfolio Selection see for example [@LH14; <http://arxiv.org/pdf/1212.2129.pdf>]. 
@@ -41,21 +41,21 @@ NYSE, DJIA, SP500, TSE, DAX
 
 
 ## Installation
-To install the OLPS package run:
+To install the olpsR package run:
 ```{r eval=FALSE}
 if (!require("devtools")) install.packages("devtools")
-devtools::install_github("ngloe/OLPS")
+devtools::install_github("ngloe/olpsR")
 ```
 
 ## Getting started
 Once installed, the package can be loaded using:
 ```{r eval=FALSE}
-library(OLPS)
+library(olpsR)
 ```
 
 To test portfolio selection algorithms some return data is loaded using the NYSE dataset. We select two assets, *kinar* and *iroqu*:
 ```{r eval=TRUE, echo=FALSE}
-library(OLPS)
+library(olpsR)
 ```
 ```{r eval=TRUE, echo=TRUE}
 data(NYSE)
@@ -86,7 +86,7 @@ plot(BH_Market, BH_best, UP)
 ## Getting Help
 For more details and an overview of the implemented algorithms and functions please refer to the package help by typing:
 ```{r eval=FALSE}
-help(package="OLPS")
+help(package="olpsR")
 ```
 
 
