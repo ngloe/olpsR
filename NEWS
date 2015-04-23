@@ -1,8 +1,9 @@
-OLPS v0.4
+olpsR v0.4
 =========
 
 Changes:
 
+* change package name to be more R-specific
 * add dataset SP500 (S&P 500)
 * add dataset TSE (Toronto Stock Exchange)
 
