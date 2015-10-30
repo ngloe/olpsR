@@ -4,6 +4,7 @@ olpsR v0.5
 Changes:
 
 * add function to generate virtual market
+* add function to generate Kelly-market
 
 
 olpsR v0.4
