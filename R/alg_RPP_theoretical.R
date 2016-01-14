@@ -49,7 +49,7 @@
 #########################################################################
 alg_RPP_theoretical = function(returns, PR="uni"){
   alg   <- "RPP_theoretical"
-  x = as.matrix(returns)
+  x = returns
   q = get_asset_prices(x)
   n = ncol(q)
   H = nrow(x)
@@ -131,8 +131,6 @@ alg_RPP_theoretical = function(returns, PR="uni"){
       b[t+1,i] = sum(b_tmp[i,])
     }
   }
-  
-  return(b)
   
   # Wealth
   S <- get_wealth(x, b)
