@@ -49,7 +49,11 @@
 #########################################################################
 alg_RPP_theoretical = function(returns, PR="uni"){
   alg   <- "RPP_theoretical"
+<<<<<<< HEAD
   x = returns
+=======
+  x = as.data.frame(returns)
+>>>>>>> 51c95daac7898d2ce6fd4a74526e0967d88d19f9
   q = get_asset_prices(x)
   n = ncol(q)
   H = nrow(x)
