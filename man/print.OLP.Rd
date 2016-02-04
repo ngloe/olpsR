@@ -13,14 +13,17 @@
 }
 \value{
 The function returns a short summary of the OLP object containing
+\item{Algorithm}{Name of the portfolio algorithm}
 \item{Assets}{names of the assets in the portfolio}
 \item{weights}{portfolio weights; only shown if weights remain constant
                during trading horizon}
 \item{Terminal Wealth}{final cumulative wealth achieved by the algorithm}
-\item{return}{annualized portfolio return (252 trading days)}
-\item{risk}{portfolio risk defined as the annualized standard deviation of returns (252 trading days)}
-\item{APY}{annualized percantage yield (252 trading days)}
-\item{MDD}{maximum draw down (downside risk)}
+\item{mu}{exponential growth rate (average wealth change without compounding effect)}
+\item{sigma}{standard deviation of the exponential growth rate}
+\item{APY}{annual percantage yield (annualization of mu, 252 trading days)}
+\item{ASTDV}{annualized standard deviation of the exponential growth rate (252 trading days)}
+\item{SR}{Sharpe ratio (risk free asset return = 0)}
+\item{CR}{Calmar ratio}
 }
 \description{
 print method for objects of the class "\code{OLP}"

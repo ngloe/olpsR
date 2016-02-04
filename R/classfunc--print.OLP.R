@@ -19,14 +19,17 @@
 #' 
 #' @return 
 #' The function returns a short summary of the OLP object containing
+#' \item{Algorithm}{Name of the portfolio algorithm}
 #' \item{Assets}{names of the assets in the portfolio}
 #' \item{weights}{portfolio weights; only shown if weights remain constant 
 #'                during trading horizon}
 #' \item{Terminal Wealth}{final cumulative wealth achieved by the algorithm}
-#' \item{return}{annualized portfolio return (252 trading days)}
-#' \item{risk}{portfolio risk defined as the annualized standard deviation of returns (252 trading days)}
-#' \item{APY}{annualized percantage yield (252 trading days)}
-#' \item{MDD}{maximum draw down (downside risk)}
+#' \item{mu}{exponential growth rate (average wealth change without compounding effect)}
+#' \item{sigma}{standard deviation of the exponential growth rate}
+#' \item{APY}{annual percantage yield (annualization of mu, 252 trading days)}
+#' \item{ASTDV}{annualized standard deviation of the exponential growth rate (252 trading days)}
+#' \item{SR}{Sharpe ratio (risk free asset return = 0)}
+#' \item{CR}{Calmar ratio}
 #' 
 #' @examples
 #' #load data
@@ -78,12 +81,17 @@ print.OLP = function(x, ...){
     }
   }
   cat("\n")
-  
   cat("  Terminal Wealth  ", round( x$Wealth[length(x$Wealth)], 3), "\n")
   cat("\n")
-  cat("  Return [%]  ", round( x$Return * 100, 3 ), "\t\t\t")
-  cat("  APY [%]  ", round( x$APY * 100, 3 ), "\n")
-  cat("  Risk   [%]  ", round( x$Risk * 100, 3), "\t\t\t")
-  cat("  MDD [%]  ", round( x$MDD * 100, 3 ), "\n")
+  cat("  mu     ", round( x$mu, 5 ), "\t\t")
+  cat("  APY   [%]  ", round( x$APY * 100, 2 ), "\t")
+  cat("  SR  ", round( x$SR, 2 ), "\n")
+  cat("  sigma  ", round( x$sigma, 5 ), "\t\t")
+  cat("  ASTDV [%]  ", round( x$ASTDV * 100, 2 ), "\t")
+  cat("  CR  ", round( x$CR, 2 ), "\n")
+  #cat("  Return [%]  ", round( x$Return * 100, 3 ), "\t\t\t")
+  #cat("  APY [%]  ", round( x$APY * 100, 3 ), "\n")
+  #cat("  Risk   [%]  ", round( x$Risk * 100, 3), "\t\t\t")
+  #cat("  MDD [%]  ", round( x$MDD * 100, 3 ), "\n")
   cat("--------\n")
 }

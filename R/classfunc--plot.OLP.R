@@ -77,15 +77,16 @@ plot.OLP <- function(x, ...){
     # wealth
     W_data = sapply(1:length(myargs), function(i) myargs[[i]]$Wealth)
     colnames(W_data) = arg_names
-    # returns
-    Return_data = sapply(1:length(myargs), function(i) myargs[[i]]$Return)
+    # return (APY)
+    Return_data = sapply(1:length(myargs), function(i) myargs[[i]]$APY)
     names(Return_data) = arg_names
-    # risk
-    Risk_data   = sapply(1:length(myargs), function(i) myargs[[i]]$Risk)
+    # risk (ASTDV)
+    Risk_data   = sapply(1:length(myargs), function(i) myargs[[i]]$ASTDV)
     names(Risk_data) = arg_names
-    # APY
-    APY_data = sapply(1:length(myargs), function(i) myargs[[i]]$APY)
-    names(APY_data) = arg_names
+    
+#     # APY
+#     APY_data = sapply(1:length(myargs), function(i) myargs[[i]]$APY)
+#     names(APY_data) = arg_names
     # MDD
     MDD_data = sapply(1:length(myargs), function(i) myargs[[i]]$MDD)
     names(MDD_data) = arg_names
@@ -96,13 +97,13 @@ plot.OLP <- function(x, ...){
     
     # plot returns and risk
     dat = as.matrix(data.frame(Risk=Risk_data, Return=Return_data))
-    plot(dat*100, main="Risk-Return", xlab="Risk [%]", ylab="Return [%]", col=mycol, pch=16, cex=1.5)
+    plot(dat*100, main="Risk-Return", xlab="ASTDV [%]", ylab="APY [%]", col=mycol, pch=16, cex=1.5)
     grid()
     
     # plot APY and MDD
-    dat = as.matrix(data.frame(APY=APY_data, MDD=MDD_data))
+    dat = as.matrix(data.frame(APY=Return_data, MDD=MDD_data))
     #barplot(dat*100, beside = TRUE, col=mycol, ylab="[%]", ylim=c(0, 1.1*max(dat*100)))
-    dotchart(dat*100, main="APY & MDD", xlab="[%]", color=mycol, )
+    dotchart(dat*100, main="APY & MDD", xlab="[%]", color=mycol,)
     
     # add legend
     par(mar = c(0, 5.1, 0, 5.1))

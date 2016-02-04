@@ -9,23 +9,31 @@
 #           wealth  --> wealth of algorithm
 # Output:   object of class OLP
 #
+# Note: Performance measures are calculated according to 
+#       Dochow, Leppek, Schmidt: A framework for automated performance evaluation of portfolio selection algorithms, 2005
 # ---------------------------------------------------------
-h_create_OLP_obj <- function(alg, returns, weights, wealth){
-  gr <- get_growth_rate(wealth)
+h_create_OLP_obj = function(alg, returns, weights, wealth){
+  #gr = get_growth_rate(wealth)
+  x  = get_price_relatives(wealth) 
+  # log-return
+  r  = log(x)
   
   # Calculate Performance Measures
-  # log-return
-  r  <- diff( log(wealth) )
-  # discrete return
-  R  <- exp(r)-1
-  # average annualized return
-  R_mean <- mean(R) * 252
-  # annualized portfolio risk (volatility risk)
-  x = get_price_relatives(wealth)
-  risk = sd(x) * sqrt(252)
-  # APY (annualized percantage yield)
+  
+  # exponential growth rate
+  mu = mean(r)
+  
+  #### annual percentage yield (APY) ####
+  # annualization of exponential growth rate
   y = length(wealth) / 252
-  APY = wealth[length(wealth)]^(1/y) - 1
+  APY = tail(wealth, n=1)^(1/y) - 1
+  
+  # standard deviation of the exponential growth rate
+  sigma = sd(r)
+  
+  # annualized standard deviation (ASTDV)
+  ASTDV = sigma * sqrt(252)
+  
   # MDD (maximum draw down)
   # DD (draw down; measures the decline from a historical peak in the cumulative wealth at time t)
   DD = sapply(1:length(wealth), function(t){ 
@@ -35,15 +43,25 @@ h_create_OLP_obj <- function(alg, returns, weights, wealth){
   # MDD (maximum draw down)
   MDD = max(DD)
   
+  # Sharpe ratio (SR)
+  SR = APY / ASTDV
+  
+  # Calmar ratio (CR)
+  CR = APY / MDD
+  
+  # create return of function
   ret <- list(Alg=alg,
-              Names=colnames(returns), 
-              Weights=weights, 
-              Wealth=wealth,
-              GrowthRate=gr,
-              Return=R_mean,
-              Risk=risk,
-              APY=APY,
-              MDD=MDD)
-  class(ret) <- "OLP"
+              Names       = colnames(returns), 
+              Weights     = weights, 
+              Wealth      = wealth,
+              #GrowthRate  = gr,
+              mu          = mu,
+              APY         = APY,
+              sigma       = sigma,
+              ASTDV       = ASTDV,
+              MDD         = MDD,
+              SR          = SR,
+              CR          = CR)
+  class(ret) = "OLP"
   return(ret)  
 }
