@@ -24,8 +24,8 @@ Features
 
 #### Functions:
 
--   transform asset prices into returns (price relatuives)
--   transform returns (price relatuives) into asset prices
+-   transform asset prices into returns (price relatives)
+-   transform returns (price relatives) into asset prices
 -   calculate portfolio wealth of rebalanced portfolios
 -   transform a sequence of price relatives into a Kelly market sequence
 -   projection onto a simplex
@@ -101,7 +101,7 @@ plot(BH_Market, BH_best, UP)
 
 ![](README_files/figure-markdown_github/unnamed-chunk-8-1.png)
 
-Getting Help
+Getting help
 ------------
 
 For more details and an overview of the implemented algorithms and functions please refer to the package help by typing:
